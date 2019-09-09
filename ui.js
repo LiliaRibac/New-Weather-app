@@ -15,9 +15,7 @@ class UI {
     this.location.textContent = `${weather.name},${weather.sys.country}`;
     this.desc.textContent = weather.weather[0].main;
     this.string.textContent = `${convertKelvinToCelsius(weather.main.temp)}\u00B0C`;
-    //     this.icon.setAttribute(`'src', ${"http://openweathermap.org/img/w/"
-    //     + weatherItem.weather[0].icon  + ".png",
-    // coordinates, weatherItem.coord.Lon, weatherItem.coord.Lat}`)
+        this.icon.setAttribute("src", weather.weather[0].icon)
     this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}% `;
     this.dewpoint.textContent = `Feel Like: ${weather.main.pressure} hpa`;
     this.wind.textContent = `Wind Speed: ${metresPerSecondToMilesPerHour(weather.wind.speed)} mph`
