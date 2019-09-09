@@ -6,16 +6,27 @@ class Weather {
   }
 
   //Featch weather from API
-  async getWeather() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&state=${this.state}&APPID=${this.apiKey}`);
+  // async getWeather() {
+  //   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&state=${this.state}&APPID=${this.apiKey}`);
 
-    const responseDate = await response.json();
-    return responseDate
-  }
+  //   const responseDate = await response.json();
+  //   return responseDate
+  // }
+
+
+  async getWeather() {
+		const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.countryCode}&APPID=${this.apiKey}`);
+		const responseData = await response.json();
+		return responseData
+	}
+
+
 
   //  Change weather location
   changeLocation(city, state) {
     this.city = city;
     this.state = state;
   }
+
 }
+
