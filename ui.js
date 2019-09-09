@@ -23,5 +23,4 @@ class UI {
     this.wind.textContent = `Wind Speed: ${metresPerSecondToMilesPerHour(weather.wind.speed)} mph`
     this.feelsLike.textContent = `Wind Direction: ${windDirectionFromDegree(weather.wind.deg)}`
   }
-  
-}
+}  
